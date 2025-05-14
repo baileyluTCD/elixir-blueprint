@@ -58,7 +58,8 @@ defmodule NixPhoenixTemplate.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:deps_nix, "~> 2.0", only: :dev}
     ]
   end
 
@@ -70,6 +71,8 @@ defmodule NixPhoenixTemplate.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      "deps.get": ["deps.get", "deps.nix"],
+      "deps.update": ["deps.update", "deps.nix"],
       setup: ["deps.get", "ecto.setup", "assets.setup", "assets.build"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],

@@ -43,7 +43,7 @@ defmodule NixPhoenixTemplateWeb do
         layouts: [html: NixPhoenixTemplateWeb.Layouts]
 
       import Plug.Conn
-      import NixPhoenixTemplateWeb.Gettext
+      use Gettext, backend: NixPhoenixTemplateWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -85,7 +85,7 @@ defmodule NixPhoenixTemplateWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import NixPhoenixTemplateWeb.CoreComponents
-      import NixPhoenixTemplateWeb.Gettext
+      use Gettext, backend: NixPhoenixTemplateWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

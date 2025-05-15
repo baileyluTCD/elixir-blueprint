@@ -20,5 +20,5 @@ defmodule NixPhoenixTemplateWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :nix_phoenix_template
+  use Gettext.Backend, otp_app: :nix_phoenix_template
 end

@@ -12,6 +12,7 @@ pkgs.writeShellApplication {
   text = ''
     exec mprocs \
       "mix phx.server" \
+      "mix test.watch --stale" \
       "postgres-dev"
   '';
 }

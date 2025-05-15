@@ -1,4 +1,4 @@
-{ pkgs }: 
+{ pkgs, flake, system }: 
   let
     mixNixDeps = pkgs.callPackages ../deps.nix { };
   in
@@ -10,8 +10,15 @@
 
       src = ../.;
 
+      removeCookie = false;
+      stripDebug = true;
+
       DATABASE_URL = "";
       SECRET_KEY_BASE = "";
+
+      nativeBuildInputs = [
+        flake.packages.${system}.appDependencies
+      ];
 
       postBuild = ''
         tailwind_path="$(mix do \

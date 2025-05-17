@@ -1,16 +1,13 @@
 { pkgs }:
 let
-  postgresConf =
-    pkgs.writeText "postgresql.conf"
-      ''
-        unix_socket_directories = '/tmp'
-      '';
+  postgresConf = pkgs.writeText "postgresql.conf" ''
+    unix_socket_directories = '/tmp'
+  '';
 
-  pgSetup =
-      ''
-        CREATE USER postgres WITH PASSWORD 'postgres' CREATEDB SUPERUSER;
-        CREATE DATABASE nix_phoenix_template_dev;
-      '';
+  pgSetup = ''
+    CREATE USER postgres WITH PASSWORD 'postgres' CREATEDB SUPERUSER;
+    CREATE DATABASE nix_phoenix_template_dev;
+  '';
 in
 pkgs.writeShellApplication {
   name = "postgres-dev";

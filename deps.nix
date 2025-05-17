@@ -2,7 +2,7 @@
   pkgs,
   lib,
   beamPackages,
-  overrides ? (x: y: { }),
+  overrides ? (_x: _y: { }),
 }:
 
 let
@@ -10,7 +10,7 @@ let
   buildRebar3 = lib.makeOverridable beamPackages.buildRebar3;
 
   workarounds = {
-    portCompiler = _unusedArgs: old: {
+    portCompiler = _unusedArgs: _old: {
       buildPlugins = [ pkgs.beamPackages.pc ];
     };
 
@@ -94,7 +94,7 @@ let
   };
 
   defaultOverrides = (
-    final: prev:
+    _final: prev:
 
     let
       apps = {
@@ -347,23 +347,6 @@ let
         in
         drv;
 
-      floki =
-        let
-          version = "0.37.1";
-          drv = buildMix {
-            inherit version;
-            name = "floki";
-            appConfigPath = ./config;
-
-            src = fetchHex {
-              inherit version;
-              pkg = "floki";
-              sha256 = "673d040cb594d31318d514590246b6dd587ed341d3b67e17c1c0eb8ce7ca6f04";
-            };
-          };
-        in
-        drv;
-
       gettext =
         let
           version = "0.26.2";
@@ -611,7 +594,6 @@ let
             };
 
             beamDeps = [
-              floki
               jason
               phoenix
               phoenix_html

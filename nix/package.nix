@@ -4,7 +4,7 @@
   system,
 }:
 let
-  mixNixDeps = pkgs.callPackages ./mix/prod.nix { };
+  mixNixDeps = pkgs.callPackages ../deps.nix { };
 in
 pkgs.beamPackages.mixRelease {
   inherit mixNixDeps;

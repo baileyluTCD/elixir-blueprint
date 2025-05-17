@@ -10,7 +10,8 @@ defmodule NixPhoenixTemplate.Application do
     children = [
       NixPhoenixTemplateWeb.Telemetry,
       NixPhoenixTemplate.Repo,
-      {DNSCluster, query: Application.get_env(:nix_phoenix_template, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:nix_phoenix_template, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: NixPhoenixTemplate.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: NixPhoenixTemplate.Finch},

@@ -260,27 +260,6 @@ let
         in
         drv;
 
-      dialyxir =
-        let
-          version = "1.4.5";
-          drv = buildMix {
-            inherit version;
-            name = "dialyxir";
-            appConfigPath = ./config;
-
-            src = fetchHex {
-              inherit version;
-              pkg = "dialyxir";
-              sha256 = "b0fb08bb8107c750db5c0b324fa2df5ceaa0f9307690ee3c1f6ba5b9eb5d35c3";
-            };
-
-            beamDeps = [
-              erlex
-            ];
-          };
-        in
-        drv;
-
       dns_cluster =
         let
           version = "0.1.3";
@@ -294,27 +273,6 @@ let
               pkg = "dns_cluster";
               sha256 = "46cb7c4a1b3e52c7ad4cbe33ca5079fbde4840dedeafca2baf77996c2da1bc33";
             };
-          };
-        in
-        drv;
-
-      doctor =
-        let
-          version = "0.22.0";
-          drv = buildMix {
-            inherit version;
-            name = "doctor";
-            appConfigPath = ./config;
-
-            src = fetchHex {
-              inherit version;
-              pkg = "doctor";
-              sha256 = "96e22cf8c0df2e9777dc55ebaa5798329b9028889c4023fed3305688d902cd5b";
-            };
-
-            beamDeps = [
-              decimal
-            ];
           };
         in
         drv;
@@ -383,23 +341,6 @@ let
         in
         drv;
 
-      erlex =
-        let
-          version = "0.2.7";
-          drv = buildMix {
-            inherit version;
-            name = "erlex";
-            appConfigPath = ./config;
-
-            src = fetchHex {
-              inherit version;
-              pkg = "erlex";
-              sha256 = "3ed95f79d1a844c3f6bf0cea61e0d5612a42ce56da9c03f01df538685365efb0";
-            };
-          };
-        in
-        drv;
-
       esbuild =
         let
           version = "0.9.0";
@@ -417,23 +358,6 @@ let
             beamDeps = [
               jason
             ];
-          };
-        in
-        drv;
-
-      ex_check =
-        let
-          version = "0.16.0";
-          drv = buildMix {
-            inherit version;
-            name = "ex_check";
-            appConfigPath = ./config;
-
-            src = fetchHex {
-              inherit version;
-              pkg = "ex_check";
-              sha256 = "4d809b72a18d405514dda4809257d8e665ae7cf37a7aee3be6b74a34dec310f5";
-            };
           };
         in
         drv;

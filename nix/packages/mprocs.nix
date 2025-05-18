@@ -6,6 +6,7 @@ pkgs.writeShellApplication {
     mprocs
     elixir
     flake.packages.${system}.appDependencies
+    flake.packages.${system}.docsWatch
     flake.packages.${system}.postgresDev
   ];
 
@@ -13,6 +14,7 @@ pkgs.writeShellApplication {
     exec mprocs \
       "mix phx.server" \
       "mix test.watch --stale" \
-      "postgres-dev"
+      "postgres-dev" \
+      "docsWatch"
   '';
 }

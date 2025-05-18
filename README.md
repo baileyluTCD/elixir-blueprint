@@ -1,18 +1,11 @@
 # NixPhoenixTemplate
 
-To start your Phoenix server:
+CI Template for developing phoenix apps with nix flakes:
 
-- Run `mix setup` to install and setup dependencies
-- Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+Contains:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-- Official website: https://www.phoenixframework.org/
-- Guides: https://hexdocs.pm/phoenix/overview.html
-- Docs: https://hexdocs.pm/phoenix
-- Forum: https://elixirforum.com/c/phoenix-forum
-- Source: https://github.com/phoenixframework/phoenix
+- A devshell with all system dependencies ready
+- A universal formatter which works on all files in the repository
+- Prepackaged app inside a layered docker image
+- Development servers through mprocs
+- Automatic mix tests, formatting checks and basic security checks

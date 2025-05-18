@@ -20,7 +20,6 @@ pkgs.beamPackages.mixRelease {
 
   nativeBuildInputs = [
     flake.packages.${system}.appDependencies
-    flake.packages.${system}.postgresDev
     flake.lib.${system}.treefmt.config.build.wrapper
   ];
 
@@ -44,10 +43,6 @@ pkgs.beamPackages.mixRelease {
     git add .
     git commit -m init --quiet
 
-    echo "All: "
-    ls **/*
-
-    treefmt --version
     treefmt --no-cache
 
     git status --short

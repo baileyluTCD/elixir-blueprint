@@ -2,7 +2,7 @@
   description = "Elixir template project with nix build system";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:baileyluTCD/nixpkgs/build-mix-copy-hidden";
     systems.url = "github:nix-systems/default";
 
     blueprint.url = "github:numtide/blueprint";

@@ -17,8 +17,14 @@ defmodule NixPhoenixTemplateWeb do
   those modules here.
   """
 
+  @doc """
+  Render static paths for the main app (i.e. robots.txt, etc)
+  """
   def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
 
+  @doc """
+  Render the main app
+  """
   def router do
     quote do
       use Phoenix.Router, helpers: false
@@ -30,12 +36,18 @@ defmodule NixPhoenixTemplateWeb do
     end
   end
 
+  @doc """
+  Create a new websocket channel
+  """
   def channel do
     quote do
       use Phoenix.Channel
     end
   end
 
+  @doc """
+  Call the phoenix controller
+  """
   def controller do
     quote do
       use Phoenix.Controller,
@@ -49,6 +61,9 @@ defmodule NixPhoenixTemplateWeb do
     end
   end
 
+  @doc """
+  Render the live view
+  """
   def live_view do
     quote do
       use Phoenix.LiveView,
@@ -58,6 +73,9 @@ defmodule NixPhoenixTemplateWeb do
     end
   end
 
+  @doc """
+  Render the live component
+  """
   def live_component do
     quote do
       use Phoenix.LiveComponent
@@ -66,6 +84,9 @@ defmodule NixPhoenixTemplateWeb do
     end
   end
 
+  @doc """
+  Render html
+  """
   def html do
     quote do
       use Phoenix.Component
@@ -95,6 +116,9 @@ defmodule NixPhoenixTemplateWeb do
     end
   end
 
+  @doc """
+  Allow for verified routes to render
+  """
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,

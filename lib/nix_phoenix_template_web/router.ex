@@ -1,4 +1,10 @@
 defmodule NixPhoenixTemplateWeb.Router do
+  @moduledoc """
+  The phoenix router for this app 
+
+  Handles stuff like connecting an endpoint to a specific address, etc
+  """
+
   use NixPhoenixTemplateWeb, :router
 
   pipeline :browser do
@@ -7,7 +13,7 @@ defmodule NixPhoenixTemplateWeb.Router do
     plug :fetch_live_flash
     plug :put_root_layout, html: {NixPhoenixTemplateWeb.Layouts, :root}
     plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug :put_secure_browser_headers, %{"content-security-policy" => "default-src 'self'"}
   end
 
   pipeline :api do

@@ -1,4 +1,8 @@
 defmodule NixPhoenixTemplateWeb.Endpoint do
+  @moduledoc """
+  The endpoint through which the main application is served
+  """
+
   use Phoenix.Endpoint, otp_app: :nix_phoenix_template
 
   # The session will be stored in the cookie and signed,

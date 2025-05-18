@@ -31,8 +31,13 @@ pkgs.beamPackages.mixRelease {
 
     until pg_isready -h /tmp ; do sleep 1 ; done
 
+    export HOME=$TMPDIR
+
     mix do \
       app.config --no-deps-check --no-compile, \
+      credo, \
+      sobelow, \
+      deps.audit, \
       test --no-deps-check
   '';
 }

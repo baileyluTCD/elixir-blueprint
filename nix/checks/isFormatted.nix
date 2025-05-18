@@ -45,6 +45,8 @@ pkgs.beamPackages.mixRelease {
 
     treefmt --no-cache
 
+    trap 'echo "Try running \"nix fmt\" to correct the formatting error."' ERR
+
     git status --short
     git --no-pager diff --exit-code
   '';

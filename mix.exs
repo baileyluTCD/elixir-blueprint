@@ -59,7 +59,11 @@ defmodule NixPhoenixTemplate.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:deps_nix, "~> 2.0", only: :dev},
-      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7", runtime: false},
+      {:ex_doc, "~> 0.34", runtime: false, warn_if_outdated: true},
+      {:sobelow, "~> 0.13", runtime: false},
+      {:mix_audit, "~> 2.1", runtime: false}
     ]
   end
 

@@ -1,11 +1,21 @@
 defmodule NixPhoenixTemplateWeb.Telemetry do
+  @moduledoc """
+  Telemetry for template
+  """
+
   use Supervisor
   import Telemetry.Metrics
 
+  @doc """
+  Start the link to the internal supervisor
+  """
   def start_link(arg) do
     Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
+  @doc """
+  Create a new telemetry module instance
+  """
   @impl true
   def init(_arg) do
     children = [
@@ -19,6 +29,9 @@ defmodule NixPhoenixTemplateWeb.Telemetry do
     Supervisor.init(children, strategy: :one_for_one)
   end
 
+  @doc """
+  Access telemetry metrics
+  """
   def metrics do
     [
       # Phoenix Metrics

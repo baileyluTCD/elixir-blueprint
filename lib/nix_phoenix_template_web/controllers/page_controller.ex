@@ -1,6 +1,12 @@
 defmodule NixPhoenixTemplateWeb.PageController do
+  @moduledoc """
+  The controller for the home page
+  """
   use NixPhoenixTemplateWeb, :controller
 
+  @doc """
+  Renders the home route's html
+  """
   def home(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
